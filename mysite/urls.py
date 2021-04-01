@@ -19,6 +19,8 @@ from django.urls import include, path
 urlpatterns = [
     # homepage root
     path('', include('homepage.urls')),
+    # login root
+    path('registration/', include('registration.urls')),
     # Polls root
     path('polls/', include('polls.urls')),
     # Admin Panel root
