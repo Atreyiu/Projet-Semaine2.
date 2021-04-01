@@ -8,7 +8,7 @@ from django.utils import timezone
 
 # Generic View Index ( a view called from a class where we define a template_name then call it in a root patterns )
 
-class LoginView(generic.ListView):
+class RegistrationView(generic.ListView):
     template_name = 'registration/login.html'
 
 

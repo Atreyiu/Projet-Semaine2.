@@ -5,7 +5,7 @@ from . import views
 app_name = 'registration'
 urlpatterns = [
     # Pages Login root
-    path('', views.LoginView.as_view(), name='login'),
+    path('', views.RegistrationView.as_view(), name='login'),
 
 ]
 
