@@ -10,13 +10,13 @@
 </head>
 <body>
     <h2>Bienvenue dans notre équipe</h2>
+	{{ error_message }}
 <div class="container" id="container">
 	<div class="form-container sign-up-container">
 		<form action="{% url 'homepage:register' %}" method="get">
             {% csrf_token %}
 			<h1>Créer un compte🖊</h1>
 			<div class="social-container">
-			
 			</div>
 			<span></span>
 			<input type="text" name="prenom" placeholder="Prénom" />
@@ -27,15 +27,15 @@
 		</form>
 	</div>
 	<div class="form-container sign-in-container">
-		<form action="#" method="post">
-            
+		<form action="{% url 'homepage:login' %}" method="get">
+            {% csrf_token %}
 			<h1>Connexion</h1>
 			<div class="social-container">
 			
 			</div>
 			<span>Utilisez votre compte</span>
-			<input type="email" placeholder="Email" />
-			<input type="password" placeholder="Mot de passe" />
+			<input type="email" name="email" placeholder="Email" />
+			<input type="password" name="password" placeholder="Mot de passe" />
 			<a href="#">Mot de passe oublié?</a>
 			<button>Connexion</button>
 		</form>

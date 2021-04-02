@@ -9,5 +9,8 @@ urlpatterns = [
 
     # register root
     path('register/', views.register, name='register'),
+
+    # login root
+    path('login/', views.login, name='login'),
 ]
 

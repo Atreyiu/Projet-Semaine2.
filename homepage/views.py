@@ -33,3 +33,23 @@ def register(request):
         return render(request, 'homepage/register.html',{'message':'Merci ' + prenom + ' de vous être enregistrer '})
     else:
         return render(request, 'homepage/register.html',{'message':'erreur'})
+
+
+# Vote contain paramaters that link with the question ID
+def login(request):
+    if request.method == 'GET':
+        # récupère les données saisies par l'utilisateur
+        email = request.GET['email']
+        # vérifier la validité du password
+        password = request.GET['password']
+
+        # ouvrir la base et rechercher l'email
+        # User.objects.get(email=email)
+        # User.objects.filter(email=email)
+        if User.objects.filter(email=email):
+            # renvoyer un message à l'utilisateur
+            return render(request, 'homepage/profil.html',{'message': ''})
+        else:
+            return render(request, 'homepage/homepage.html',{'error_message':'Vous devez vous inscrire'})
+    else:
+        return render(request, 'homepage/register.html',{'error_message':'erreur de connexion'})
